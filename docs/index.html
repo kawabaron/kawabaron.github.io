@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>kawabaron Apps</title>
+  <meta name="description" content="川端孝明が開発するiOSアプリの一覧ページです。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ----- Variables ----- */
+    :root {
+      --bg-primary: #000000;
+      --bg-secondary: #0A0A0A;
+      --bg-card: #111111;
+      --bg-card-hover: #1A1A1A;
+      --border-color: #1A1A1A;
+      --border-accent: #2A2A2A;
+      --text-primary: #FFFFFF;
+      --text-secondary: #CCCCCC;
+      --text-muted: #888888;
+      --text-dim: #555555;
+      --accent: #8B5CF6;
+      --accent-light: #A78BFA;
+      --accent-dim: rgba(139, 92, 246, 0.15);
+      --accent-glow: rgba(139, 92, 246, 0.3);
+      --max-width: 720px;
+    }
+
+    /* ----- Reset ----- */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-secondary);
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: var(--accent-light);
+    }
+
+    /* ----- Layout ----- */
+    .page-wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ----- Header ----- */
+    .site-header {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), #6D28D9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+
+    .logo-text {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: 0.5px;
+    }
+
+    .logo-sub {
+      font-size: 13px;
+      color: var(--text-dim);
+      margin-left: 8px;
+      font-weight: 400;
+    }
+
+    /* ----- Hero ----- */
+    .hero {
+      padding: 72px 0 48px;
+      text-align: center;
+    }
+
+    .hero-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-desc {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    /* ----- App Cards ----- */
+    .app-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      padding-bottom: 80px;
+    }
+
+    .app-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 28px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .app-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--card-accent, var(--accent)), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .app-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-accent);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    }
+
+    .app-card:hover::before {
+      opacity: 1;
+    }
+
+    .app-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      flex-shrink: 0;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .app-info {
+      flex: 1;
+    }
+
+    .app-name {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .app-desc {
+      font-size: 13px;
+      color: var(--text-dim);
+      line-height: 1.5;
+    }
+
+    .app-arrow {
+      font-size: 20px;
+      color: var(--text-dim);
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .app-card:hover .app-arrow {
+      transform: translateX(4px);
+      color: var(--text-muted);
+    }
+
+    /* Per-app accent colors */
+    .app-card--preciselight {
+      --card-accent: #FFB800;
+    }
+
+    .app-card--preciselight .app-icon {
+      background: linear-gradient(135deg, #FFB800, #FF8C00);
+    }
+
+    /* ----- Footer ----- */
+    .site-footer {
+      padding: 24px 0;
+      border-top: 1px solid var(--border-color);
+      margin-top: auto;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: var(--text-dim);
+      text-align: center;
+    }
+
+    /* ----- Responsive ----- */
+    @media (max-width: 640px) {
+      .hero {
+        padding: 48px 0 32px;
+      }
+
+      .hero-title {
+        font-size: 24px;
+      }
+
+      .app-card {
+        padding: 20px;
+        gap: 16px;
+      }
+
+      .app-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 24px;
+        border-radius: 12px;
+      }
+
+      .app-name {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-wrapper">
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="logo-icon">🚀</div>
+        <span class="logo-text">kawabaron<span class="logo-sub">Apps</span></span>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <main>
+      <div class="container">
+        <section class="hero">
+          <h1 class="hero-title">アプリ一覧</h1>
+          <p class="hero-desc">川端孝明が開発するiOSアプリの情報ページです</p>
+        </section>
+
+        <!-- App Grid -->
+        <section class="app-grid">
+
+          <!-- PreciseLight -->
+          <a href="PreciseLight/index.html" class="app-card app-card--preciselight">
+            <div class="app-icon">💡</div>
+            <div class="app-info">
+              <div class="app-name">PreciseLight</div>
+              <div class="app-desc">LEDトーチの明るさを0〜100%で精密にコントロール</div>
+            </div>
+            <span class="app-arrow">→</span>
+          </a>
+
+          <!-- 今後のアプリはここに追加 -->
+          <!--
+          <a href="NextApp/index.html" class="app-card app-card--nextapp">
+            <div class="app-icon">🎯</div>
+            <div class="app-info">
+              <div class="app-name">NextApp</div>
+              <div class="app-desc">アプリの説明</div>
+            </div>
+            <span class="app-arrow">→</span>
+          </a>
+          -->
+
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <p class="footer-copy">&copy; 2026 川端孝明. All rights reserved.</p>
+      </div>
+    </footer>
+
+  </div>
+</body>
+
+</html>
