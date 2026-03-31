@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bar941</title>
+  <meta name="description" content="Bar941 は、iPhone のスクリーンショット上部を自然に整えて保存・共有できる iOS アプリです。">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f3f7f2;
+      --text: #1f3124;
+      --sub: #637467;
+      --card: rgba(255, 255, 255, 0.92);
+      --line: #d6e2d5;
+      --accent: #3f7a55;
+      --accent-soft: #e6f0e8;
+      --max-width: 860px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(163, 210, 174, 0.34), transparent 28%),
+        linear-gradient(180deg, #edf4ec 0%, var(--bg) 18%, var(--bg) 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      padding: 28px 0 12px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+    }
+
+    .brand-mark,
+    .hero-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      background: linear-gradient(135deg, #244734, #7cbc88);
+      box-shadow: 0 14px 30px rgba(63, 122, 85, 0.24);
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+    }
+
+    .hero {
+      padding: 34px 0 26px;
+      text-align: center;
+    }
+
+    .hero-mark {
+      width: 88px;
+      height: 88px;
+      border-radius: 28px;
+      margin: 0 auto 24px;
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+    }
+
+    h1 {
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+
+    .hero p {
+      max-width: 560px;
+      margin: 0 auto;
+      color: var(--sub);
+      line-height: 1.8;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      padding: 24px 0 56px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: 0 16px 36px rgba(36, 71, 52, 0.08);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: #b8cdbd;
+      box-shadow: 0 24px 44px rgba(36, 71, 52, 0.12);
+    }
+
+    .card-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      margin-bottom: 14px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .card h2 {
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: var(--sub);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .footer {
+      padding: 0 0 40px;
+      text-align: center;
+      color: var(--sub);
+      font-size: 13px;
+    }
+
+    @media (max-width: 760px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="../index.html" class="brand">
+        <span class="brand-mark">941</span>
+        <span>kawabaron Apps</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-mark">941</div>
+      <h1>Bar941</h1>
+      <p>iPhone のスクリーンショット上部を自然に整え、保存や共有までスムーズに行える iOS アプリです。</p>
+    </section>
+
+    <section class="grid">
+      <a href="terms.html" class="card">
+        <div class="card-badge">T</div>
+        <h2>利用規約</h2>
+        <p>アプリの利用条件と禁止事項、免責事項をご確認いただけます。</p>
+      </a>
+      <a href="privacy.html" class="card">
+        <div class="card-badge">P</div>
+        <h2>プライバシーポリシー</h2>
+        <p>画像や設定情報の取扱い、外部サービス利用の有無についてご案内します。</p>
+      </a>
+      <a href="contact.html" class="card">
+        <div class="card-badge">C</div>
+        <h2>お問い合わせ</h2>
+        <p>不具合報告やご意見、ご要望の連絡先をご案内します。</p>
+      </a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">&copy; 2026 川端孝明. All rights reserved.</div>
+  </footer>
+</body>
+
+</html>

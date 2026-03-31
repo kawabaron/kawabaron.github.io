@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ - Bar941</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f4ef;
+      --card: rgba(255, 255, 255, 0.95);
+      --line: #e6ddd1;
+      --text: #36271d;
+      --sub: #746355;
+      --accent: #a16028;
+      --accent-soft: #faefe3;
+      --max-width: 760px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(238, 173, 107, 0.24), transparent 32%),
+        linear-gradient(180deg, #f8f1e7 0%, var(--bg) 20%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      padding: 28px 0 12px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #6b3f18, #e8a55f);
+      box-shadow: 0 14px 30px rgba(161, 96, 40, 0.22);
+    }
+
+    .page-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 32px 24px 40px;
+      margin: 18px auto 40px;
+      box-shadow: 0 18px 50px rgba(107, 63, 24, 0.08);
+      backdrop-filter: blur(12px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(30px, 4vw, 40px);
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .lead {
+      color: var(--sub);
+      margin-bottom: 28px;
+    }
+
+    .contact-card {
+      background: linear-gradient(180deg, #fff8f2, #ffffff);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 22px;
+      margin-bottom: 24px;
+    }
+
+    .contact-label {
+      color: var(--sub);
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    .contact-address {
+      font-size: clamp(22px, 4vw, 30px);
+      font-weight: 700;
+      word-break: break-all;
+    }
+
+    .prose h2 {
+      font-size: 20px;
+      margin: 30px 0 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .prose p,
+    .prose ul {
+      margin-bottom: 16px;
+    }
+
+    .prose ul {
+      padding-left: 1.2em;
+    }
+
+    .footer {
+      padding-bottom: 40px;
+      text-align: center;
+      color: var(--sub);
+      font-size: 13px;
+    }
+
+    @media (max-width: 640px) {
+      .page-card {
+        padding: 26px 18px 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="../index.html" class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>kawabaron Apps</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="container page-card">
+    <div class="eyebrow">Bar941</div>
+    <h1>お問い合わせ</h1>
+    <p class="lead">Bar941 に関するご意見、ご要望、不具合のご報告は、以下のメールアドレスまでご連絡ください。</p>
+
+    <section class="contact-card">
+      <div class="contact-label">メールアドレス</div>
+      <div class="contact-address">
+        <a href="mailto:kawabarondev@gmail.com">kawabarondev@gmail.com</a>
+      </div>
+    </section>
+
+    <div class="prose">
+      <h2>お問い合わせの際にあると助かる情報</h2>
+      <ul>
+        <li>ご利用中の端末名と iOS バージョン</li>
+        <li>アプリのバージョン</li>
+        <li>発生している事象の内容</li>
+        <li>必要に応じて再現手順やスクリーンショット</li>
+      </ul>
+
+      <h2>ご案内</h2>
+      <p>お問い合わせ内容によっては、返信までに数日ほどお時間をいただく場合があります。あらかじめご了承ください。</p>
+      <p>パスワード、クレジットカード番号、個人を特定しうる機密情報などは送信しないようお願いいたします。</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">&copy; 2026 川端孝明. All rights reserved.</div>
+  </footer>
+</body>
+
+</html>
