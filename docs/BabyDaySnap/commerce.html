@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>特定商取引法に基づく表示 - BSnap</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+  <style>
+    :root {
+      --bg-primary: #000000;
+      --bg-card: #111111;
+      --border-color: #1A1A1A;
+      --text-primary: #FFFFFF;
+      --text-secondary: #CCCCCC;
+      --text-muted: #888888;
+      --accent: #8B5CF6;
+      --max-width: 720px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-secondary);
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .page-wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .site-header {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-text {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .logo-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-left: 8px;
+      font-weight: 400;
+    }
+
+    .content-area {
+      padding: 48px 0 80px;
+    }
+
+    .content-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    .lead {
+      margin-bottom: 24px;
+    }
+
+    .info-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .info-row {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 20px;
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .info-row:last-child {
+      border-bottom: none;
+    }
+
+    .info-label {
+      color: var(--text-muted);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .info-value {
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+
+    .info-value strong {
+      color: var(--text-primary);
+    }
+
+    .note {
+      margin-top: 24px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .site-footer {
+      padding: 24px 0;
+      border-top: 1px solid var(--border-color);
+      margin-top: auto;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 640px) {
+      .info-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="../index.html" class="logo-text">kawabaron<span class="logo-sub">Apps</span></a>
+      </div>
+    </header>
+    <main class="content-area">
+      <div class="container">
+        <h1 class="content-title">特定商取引法に基づく表示</h1>
+        <p class="lead">BSnap における有料コンテンツの提供条件を、特定商取引法に基づき以下のとおり表示します。</p>
+
+        <section class="info-card" aria-label="特定商取引法に基づく表示">
+          <div class="info-row">
+            <div class="info-label">事業者名</div>
+            <div class="info-value"><strong>川端孝明</strong></div>
+          </div>
+          <div class="info-row">
+            <div class="info-label">住所</div>
+            <div class="info-value">神奈川県相模原市南区相模大野6-4-1 グリンデルヴァレー303号室</div>
+          </div>
+          <div class="info-row">
+            <div class="info-label">電話番号</div>
+            <div class="info-value"><a href="tel:09062659699">090-6265-9699</a></div>
+          </div>
+          <div class="info-row">
+            <div class="info-label">メールアドレス</div>
+            <div class="info-value"><a href="mailto:kawabarondev@gmail.com">kawabarondev@gmail.com</a></div>
+          </div>
+          <div class="info-row">
+            <div class="info-label">販売価格</div>
+            <div class="info-value">500円（税込）</div>
+          </div>
+          <div class="info-row">
+            <div class="info-label">支払方法 / 支払時期</div>
+            <div class="info-value">お支払いは Apple Account に登録されたお支払い方法により行われ、購入確定時に課金されます。</div>
+          </div>
+          <div class="info-row">
+            <div class="info-label">提供時期</div>
+            <div class="info-value">決済完了後、直ちにご利用いただけます。</div>
+          </div>
+          <div class="info-row">
+            <div class="info-label">返品 / 返金条件</div>
+            <div class="info-value">デジタルコンテンツの性質上、購入確定後のお客様都合による返品・キャンセルはお受けしておりません。返金の可否および手続は Apple の定める条件に従います。返金をご希望の場合は <a href="https://reportaproblem.apple.com/" target="_blank" rel="noopener noreferrer">reportaproblem.apple.com</a> よりお手続きください。</div>
+          </div>
+          <div class="info-row">
+            <div class="info-label">動作環境</div>
+            <div class="info-value">iOS または iPadOS を搭載した Apple 製デバイス上で、App Store から提供される BSnap の対応バージョンが動作する環境が必要です。</div>
+          </div>
+        </section>
+
+        <p class="note">価格や提供内容は、App Store の表示および本ページの更新内容に応じて変更される場合があります。お問い合わせは <a href="contact.html">お問い合わせページ</a> からお願いいたします。</p>
+        <p class="note" style="text-align:right;">2026年3月31日 制定</p>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; 2026 川端孝明. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>
